@@ -1,156 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 
 <head>
-    <meta charset='utf-8'>
+    <meta charset="UTF-8">
     <title>Eetu Haatainen</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #7c3aed;
+            --card-bg: #1e1e1e;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
-
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         header {
-            background-color: #08eefa;
-            color: white;
+            background-color: var(--accent-color);
             padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav {
-            background-color: #08eefa;
-            color: white;
-            text-align: center;
-            margin: 20px 0px;
+            background-color: #1b1b1b;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
-            font-size: 18px;
-            padding: 20px;
-            display: inline-block;
-            font-weight: bold;
+            font-size: 16px;
+            padding: 15px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background-color: var(--accent-color);
+            color: #fff;
         }
 
-        img{
+        section {
+            display: none;
+            padding: 40px 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        h2 {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        li {
+            background-color: #292929;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        img {
             width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #08eefa;
-            margin: 20px;
-            
+            border: 3px solid var(--accent-color);
+            margin: 20px auto;
+            display: block;
         }
 
-        li {
-            color: white;
-            background-color: #2d2d2d;
-            padding: 5px;
-            margin: 5px;
+        p {
+            text-align: center;
         }
-
-        h2 {
-            color: white;
-            background-color: rgb(53, 53, 53);
-            padding: 5px;
-        }
-
-        p{
-            text-align: center;            
-        }
-
-
     </style>
 </head>
 
 <body>
 
     <header>
-        <!-- Otsikot-->
-        <h1 align="center">Eetu Haatainen</h1>
-        <p align="center"> Opiskelia</p>
-        <nav align="center">
-            <!--Navigointi #gang-->
-            <a href="#mina">Tietoa minusta</a>
-            <a href="#taidot">Taidot</a>
-            <a href="#tyokokemus">Työkokemus</a>
-            <a href="#Koulutus">Koulutus</a>
-            <a href="https://github.com/Maurisio12345">Työnäytteet</a>
-        </nav>
-
-       
-    
-       
+        <h1>Eetu Haatainen</h1>
+        <p>Opiskelija</p>
     </header>
 
-    
+    <nav>
+        <a href="#" onclick="showSection('mina')">Tietoa minusta</a>
+        <a href="#" onclick="showSection('taidot')">Taidot</a>
+        <a href="#" onclick="showSection('tyokokemus')">Työkokemus</a>
+        <a href="#" onclick="showSection('koulutus')">Koulutus</a>
+        <a href="https://github.com/Maurisio12345" target="_blank">Työnäytteet</a>
+    </nav>
 
-    <sections id="mina" class="mina">
-        <br>
-        <br>
-        <br>
-        <!--Tietoa minusta-->
-        <h2>
-            Tietoa minusta
-        </h2>
-        
-        <p>
-            
-            Olen Eetu Haatainen, opiskelia. keebab on rakas <3
-            
-        </p>
-        <p>
-            <img src="images.jpg" alt="">
-        </p>
+    <section id="mina" class="active">
+        <h2>Tietoa minusta</h2>
+        <p>Olen Eetu Haatainen, opiskelija. keebab on rakas &lt;3</p>
+        <img src="images.jpg" alt="Eetu">
+    </section>
 
-
-    </sections>
-
-    <sections id="taidot" class="taidot" >
+    <section id="taidot">
         <h2>Taidot</h2>
         <ul>
             <li>HTML, CSS</li>
             <li>C#</li>
-
-
         </ul>
+    </section>
 
-    </sections>
-
-    
-
-    <sections id="tyokokemus" class="kokemus">
+    <section id="tyokokemus">
         <h2>Työkokemus</h2>
         <ul>
-            <li><strong> MarbauOy (orjatyötä)</strong></li>
-            
-
-
+            <li><strong>Marbau Oy</strong> (orjatyötä)</li>
         </ul>
+    </section>
 
-    </sections>
-
-    <sections id="Koulutus">
+    <section id="koulutus">
         <h2>Koulutus</h2>
         <ul>
-            <li><strong> Savon amattiopisto Tieto ja viestintä tekniikka</strong></li>
-            
-
-
+            <li><strong>Savon ammattiopisto – Tieto- ja viestintätekniikka</strong></li>
         </ul>
+    </section>
 
-    </sections>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+                setTimeout(() => sec.style.display = 'none', 400);
+            });
 
+            const target = document.getElementById(id);
+            setTimeout(() => {
+                target.style.display = 'block';
+                setTimeout(() => target.classList.add('active'), 10);
+            }, 400);
+        }
+    </script>
 
 </body>
 
